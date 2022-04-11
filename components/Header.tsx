@@ -50,12 +50,19 @@ export const Header = () => {
       </div>
 
       {/* Bottom header */}
-      {/* <div className="flex items-center bg-self_blue-light">
-        <p>
+      <div className="flex items-center bg-self_blue-light text-white text-[13px] space-x-3 p-2 pl-4">
+        <p className="link flex items-center">
           <MenuIcon className="h-6 mr-1" />
           All
         </p>
-      </div> */}
+        <p className="link">Today's Deal</p>
+        <p className="link">Customer Service</p>
+        <p className="link">Gift Cards</p>
+        <p className="link hidden md:inline-flex">Sell</p>
+        <p className="link hidden md:inline-flex">Electronics</p>
+        <p className="link hidden lg:inline-flex">Foods & Groceries</p>
+        <p className="link hidden lg:inline-flex">Health & Personal Care</p>
+      </div>
     </header>
   );
 };

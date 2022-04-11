@@ -10,6 +10,11 @@ const Home: NextPage = () => {
         <link rel="icon" href="/logo-for-tab.svg" />
       </Head>
       <Header />
+      <main>
+        {/* Banner  */}
+
+        {/* Product Feed  */}
+      </main>
     </div>
   );
 };
