@@ -17,6 +17,9 @@ export const ProductFeed = ({ products }: ProductFeedPropsType) => {
           return <Product key={product.id} product={product} />;
         })}
       </div>
+      {products.slice(5, products.length).map((product: any) => {
+        return <Product key={product.id} product={product} />;
+      })}
     </div>
   );
 };
