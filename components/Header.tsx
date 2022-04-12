@@ -6,7 +6,7 @@ import {
 } from "@heroicons/react/outline";
 import { useRouter } from "next/router";
 
-export const Header = () => {
+const Header = () => {
   const router = useRouter();
   return (
     <header className="sticky top-0 z-50">
@@ -72,3 +72,5 @@ export const Header = () => {
     </header>
   );
 };
+
+export default Header;

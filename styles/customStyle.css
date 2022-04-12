@@ -47,3 +47,7 @@
     transform: translateX(300px);
     transition: all 500ms ease-out;
 } */
+
+body {
+  background: rgb(240, 240, 240);
+}
