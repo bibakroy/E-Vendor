@@ -5,9 +5,12 @@ import {
   ShoppingCartIcon,
 } from "@heroicons/react/outline";
 import { useRouter } from "next/router";
+import { useSession, signIn, signOut } from "next-auth/react";
 
 const Header = () => {
   const router = useRouter();
+  const { data: session } = useSession();
+
   return (
     <header className="sticky top-0 z-50">
       {/* top header */}
@@ -32,8 +35,11 @@ const Header = () => {
         </div>
 
         <div className="text-white flex items-center text-xs space-x-6 mx-6 whitespace-nowrap">
-          <div className="link">
-            <p>Hello, Bibak Roy</p>
+          <div
+            className="link"
+            onClick={() => (!session ? signIn() : signOut())}
+          >
+            <p>{session ? `Hello, ${session.user?.name}` : "Sign In"}</p>
             <p className="font-extrabold md:text-sm">Account & Lists</p>
           </div>
           <div className="link">

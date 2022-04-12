@@ -23,9 +23,6 @@ const Banner = () => {
           <img loading="lazy" src="/product-carousel/4.jpg" alt="" />
         </div>
         <div>
-          <img loading="lazy" src="/product-carousel/5.jpg" alt="" />
-        </div>
-        <div>
           <img loading="lazy" src="/product-carousel/7.jpg" alt="" />
         </div>
         <div>
