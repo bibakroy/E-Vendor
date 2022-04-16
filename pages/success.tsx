@@ -13,13 +13,13 @@ const success = () => {
           <div className="flex items-center space-x-2 mb-5">
             <CheckCircleIcon className="text-green-500 h-10" />
             <h1 className="text-3xl">
-              Thank you, your order has been confirmed
+              Thank you, your order has been confirmed.
             </h1>
           </div>
           <p>
             Thanks for shopping with us. We'll send you a confirmation once your
             item has shipped. If you would like to check the status of your
-            order(s), please press the link below
+            order(s), please press the link below.
           </p>
           <button
             className="button mt-8"
