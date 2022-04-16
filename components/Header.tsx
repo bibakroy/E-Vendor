@@ -7,7 +7,7 @@ import {
 import { useRouter } from "next/router";
 import { useSession, signIn, signOut } from "next-auth/react";
 import { useSelector } from "react-redux";
-import { selectItems } from "../redux/slices/cartSlice";
+import { selectItems } from "../redux/store";
 
 const Header = () => {
   const router = useRouter();
@@ -18,7 +18,7 @@ const Header = () => {
     <header className="sticky top-0 z-50">
       {/* top header */}
       <div className="bg-self_blue flex items-center flex-grow p-1 py-3">
-        <div className="flex items-center flex-grow md:flex-grow-0 flex-shrink-0 mr-3 ml-4">
+        <div className="flex items-center flex-grow md:flex-grow-0 flex-shrink-0 mr-2 ml-2">
           <Image
             src="/logo.svg"
             width={100}
