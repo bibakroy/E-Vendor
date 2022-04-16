@@ -11,7 +11,7 @@ type ProductsPropsType = {
 
 const Home = ({ products }: ProductsPropsType) => {
   return (
-    <div>
+    <div className="bg-gray-100">
       <Head>
         <title>E-Market</title>
         <link rel="icon" href="/logo-for-tab.svg" />

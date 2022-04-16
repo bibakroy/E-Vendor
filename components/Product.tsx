@@ -3,6 +3,8 @@ import Image from "next/image";
 import { StarIcon } from "@heroicons/react/solid";
 import { useState } from "react";
 import Currency from "react-currency-formatter";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../redux/slices/cartSlice";
 
 type ProductPropsType = {
   product: ProductType;
@@ -17,6 +19,20 @@ export const Product = ({
   const [rating] = useState(
     Math.floor(Math.random() * (MAX_RATING - MIN_RATING + 1)) + MIN_RATING
   );
+
+  const dispatch = useDispatch();
+  const addItemToCart = () => {
+    const product = {
+      id,
+      title,
+      price,
+      description,
+      category,
+      image,
+    };
+
+    dispatch(addToCart(product));
+  };
 
   return (
     <div className="relative flex flex-col m-5 bg-white z-30 p-10">
@@ -36,7 +52,9 @@ export const Product = ({
       <div>
         <Currency quantity={price} currency="USD" />
       </div>
-      <button className="mt-auto button">Add to Cart</button>
+      <button className="mt-auto button" onClick={addItemToCart}>
+        Add to Cart
+      </button>
     </div>
   );
 };

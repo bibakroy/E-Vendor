@@ -6,10 +6,13 @@ import {
 } from "@heroicons/react/outline";
 import { useRouter } from "next/router";
 import { useSession, signIn, signOut } from "next-auth/react";
+import { useSelector } from "react-redux";
+import { selectItems } from "../redux/slices/cartSlice";
 
 const Header = () => {
   const router = useRouter();
   const { data: session } = useSession();
+  const items = useSelector(selectItems);
 
   return (
     <header className="sticky top-0 z-50">
@@ -20,7 +23,6 @@ const Header = () => {
             src="/logo.svg"
             width={100}
             height={30}
-            // objectFit="contain"
             className="cursor-pointer"
             onClick={() => router.push("/")}
           />
@@ -51,7 +53,7 @@ const Header = () => {
             onClick={() => router.push("/checkout")}
           >
             <span className="absolute w-4 h-4 bg-yellow-100 top-0 right-0 md:right-7 text-center rounded-full text-black font-bold">
-              0
+              {items.length}
             </span>
             <ShoppingCartIcon className="h-10" />
             <p className="font-extrabold md:text-sm hidden md:inline mt-1">
