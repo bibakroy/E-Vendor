@@ -5,10 +5,10 @@ export type ProductType = {
   description: string;
   category: string;
   image: string;
-  rating: Rating;
+  rating: number;
 };
 
-type Rating = {
-  rate: number;
-  count: number;
-};
+// type Rating = {
+//   rate: number;
+//   count: number;
+// };

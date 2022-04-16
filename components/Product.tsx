@@ -29,6 +29,7 @@ export const Product = ({
       description,
       category,
       image,
+      rating,
     };
 
     dispatch(addToCart(product));
@@ -45,7 +46,7 @@ export const Product = ({
         {Array(rating)
           .fill(1)
           .map((_, i) => (
-            <StarIcon className="h-5 text-yellow-500" />
+            <StarIcon key={i} className="h-5 text-yellow-500" />
           ))}
       </div>
       <p className="text-xs my-2 line-clamp-2">{description}</p>
