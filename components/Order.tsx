@@ -30,8 +30,8 @@ const Order = ({
       </div>
       <div className="p-5 sm:-10">
         <div className="flex space-x-6 overflow-y-auto">
-          {images.map((image) => (
-            <img src={image} className="h-20 object-contain sm:h-32" />
+          {images.map((image, i) => (
+            <img src={image} key={i} className="h-20 object-contain sm:h-32" />
           ))}
         </div>
       </div>

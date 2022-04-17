@@ -17,8 +17,8 @@ const success = () => {
             </h1>
           </div>
           <p>
-            Thanks for shopping with us. We'll send you a confirmation once your
-            item has shipped. If you would like to check the status of your
+            Thanks for shopping with us. We will send you a confirmation once
+            your item has shipped. If you would like to check the status of your
             order(s), please press the link below.
           </p>
           <button

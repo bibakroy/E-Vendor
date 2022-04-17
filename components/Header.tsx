@@ -69,7 +69,7 @@ const Header = () => {
           <MenuIcon className="h-6 mr-1" />
           All
         </p>
-        <p className="link">Today's Deal</p>
+        <p className="link">{"Todays' Deal"}</p>
         <p className="link">Customer Service</p>
         <p className="link">Gift Cards</p>
         <p className="link hidden md:inline-flex">Sell</p>

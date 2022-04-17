@@ -41,7 +41,7 @@ export default order;
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 
-  //get the user's logged in credentials
+  //get the users logged in credentials
   const session: any = await getSession(context);
 
   if (!session) {
