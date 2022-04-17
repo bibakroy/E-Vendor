@@ -30,7 +30,7 @@ const cartSlice = createSlice({
         newCart.splice(index, 1);
       } else {
         console.warn(
-          `cannot remove the product of id ${action.payload.id} as it is not existed`
+          `Cannot remove the product of id ${action.payload.id} as it is not existed`
         );
       }
       state.items = newCart;

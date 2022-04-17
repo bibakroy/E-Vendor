@@ -32,7 +32,18 @@ export const Product = ({
       rating,
     };
 
+    //add to redux
     dispatch(addToCart(product));
+
+    //add to localstorage
+    if (localStorage.getItem("Items") === null) {
+      localStorage.setItem("Items", "[]");
+    }
+
+    let itemsArray = JSON.parse(localStorage.getItem("Items")!);
+    itemsArray.push(product);
+
+    localStorage.setItem("Items", JSON.stringify(itemsArray));
   };
 
   return (

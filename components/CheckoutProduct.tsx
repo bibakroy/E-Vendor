@@ -13,6 +13,7 @@ const CheckoutProduct = ({
   item: { id, title, price, rating, description, category, image },
 }: ItemType) => {
   const dispatch = useDispatch();
+
   const addItemToCart = () => {
     const product = {
       id,
@@ -23,11 +24,37 @@ const CheckoutProduct = ({
       image,
       rating,
     };
-
+    //add to redux
     dispatch(addToCart(product));
+
+    //add to localstorage
+    if (localStorage.getItem("Items") === null) {
+      localStorage.setItem("Items", "[]");
+    }
+
+    const itemsArray = JSON.parse(localStorage.getItem("Items")!);
+    itemsArray.push(product);
+
+    localStorage.setItem("Items", JSON.stringify(itemsArray));
   };
+
   const removeItemFromCart = () => {
+    //remove from redux
     dispatch(removeFromCart({ id }));
+
+    //remove from localstorage
+    const itemsArray = JSON.parse(localStorage.getItem("Items")!);
+    const index = itemsArray.findIndex((item: any) => item.id === id);
+
+    if (index >= 0) {
+      itemsArray.splice(index, 1);
+    } else {
+      console.warn(
+        `Cannot remove the product of id ${id} as it is not existed`
+      );
+    }
+
+    localStorage.setItem("Items", JSON.stringify(itemsArray));
   };
 
   return (

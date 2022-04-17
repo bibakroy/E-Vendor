@@ -6,13 +6,33 @@ import {
 } from "@heroicons/react/outline";
 import { useRouter } from "next/router";
 import { useSession, signIn, signOut } from "next-auth/react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { selectItems } from "../redux/store";
+import { addToCart } from "../redux/slices/cartSlice";
+import { useEffect } from "react";
 
 const Header = () => {
   const router = useRouter();
   const { data: session } = useSession();
   const items = useSelector(selectItems);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    let itemsArray = [];
+    if (typeof window !== "undefined") {
+      itemsArray = JSON.parse(localStorage.getItem("Items")!);
+
+      if (
+        (itemsArray !== null ||
+          itemsArray !== undefined ||
+          itemsArray.length !== 0) &&
+        items.length === 0
+      ) {
+        console.log(itemsArray);
+        itemsArray.map((item: any) => dispatch(addToCart(item)));
+      }
+    }
+  }, []);
 
   return (
     <header className="sticky top-0 z-50">
@@ -53,6 +73,7 @@ const Header = () => {
             onClick={() => router.push("/checkout")}
           >
             <span className="absolute w-4 h-4 bg-yellow-100 top-0 right-0 md:right-7 text-center rounded-full text-black font-bold">
+              {/* {itemsArray ? itemsArray.length : items.length} */}
               {items.length}
             </span>
             <ShoppingCartIcon className="h-10" />

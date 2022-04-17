@@ -15,6 +15,12 @@ const Checkout = () => {
   const total = useSelector(selectTotal);
   const { data: session } = useSession();
 
+  // let itemsArray = [];
+  // if (typeof window !== "undefined") {
+  //   itemsArray = JSON.parse(localStorage.getItem("Items")!);
+  // }
+  // console.log(itemsArray);
+
   const createCheckoutSession = async () => {
     const stripe = await stripePromise;
     // call the backend to create a checkout session
@@ -49,6 +55,13 @@ const Checkout = () => {
             {items.map((item: ProductType, i: number) => (
               <CheckoutProduct key={i} item={item} />
             ))}
+            {/* {items.length !== 0
+              ? items.map((item: ProductType, i: number) => (
+                  <CheckoutProduct key={i} item={item} />
+                ))
+              : itemsArray.map((item: ProductType, i: number) => (
+                  <CheckoutProduct key={i} item={item} />
+                ))} */}
           </div>
         </div>
 
