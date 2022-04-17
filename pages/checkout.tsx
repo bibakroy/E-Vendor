@@ -16,6 +16,9 @@ const Checkout = () => {
   const { data: session } = useSession();
 
   const createCheckoutSession = async () => {
+    //clearing cart item from localstorage
+    localStorage.removeItem("Items");
+
     const stripe = await stripePromise;
     // call the backend to create a checkout session
     const checkoutSession = await axios.post("/api/create-checkout-session", {
