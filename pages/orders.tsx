@@ -11,7 +11,7 @@ type OrderArrayType = {
   orders: OrderType[];
 };
 
-const order = ({ orders }: OrderArrayType) => {
+const Orders = ({ orders }: OrderArrayType) => {
   const { data: session } = useSession();
 
   return (
@@ -36,7 +36,7 @@ const order = ({ orders }: OrderArrayType) => {
   );
 };
 
-export default order;
+export default Orders;
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
