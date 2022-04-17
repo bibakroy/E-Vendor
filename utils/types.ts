@@ -12,3 +12,12 @@ export type ProductType = {
 //   rate: number;
 //   count: number;
 // };
+
+export type OrderType = {
+  id: string;
+  amount: number;
+  amountShipping: number;
+  images: string[];
+  timestamp: number;
+  items: Object[];
+};

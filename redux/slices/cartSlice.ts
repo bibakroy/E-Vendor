@@ -5,12 +5,6 @@ type StateType = {
   items: ProductType[];
 };
 
-type StateCartType = {
-  cart: {
-    items: ProductType[];
-  };
-};
-
 const initialState: StateType = {
   items: [],
 };

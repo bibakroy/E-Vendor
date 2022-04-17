@@ -3,23 +3,16 @@ import Header from "../components/Header";
 import { GetServerSideProps } from "next";
 import db from "../firebase";
 import moment from "moment";
+import Order from "../components/Order";
 // import { collection, getDocs } from "firebase/firestore";
+import { OrderType } from "../utils/types";
 
-type OrderType = {
-  orders: {
-    id: string;
-    amount: number;
-    amountShipping: number;
-    image: string[];
-    timestamp: number;
-    items: Object[];
-  };
+type OrderArrayType = {
+  orders: OrderType[];
 };
 
-const order = ({ orders }: OrderType) => {
+const order = ({ orders }: OrderArrayType) => {
   const { data: session } = useSession();
-
-  console.log({ orders });
 
   return (
     <div>
@@ -29,11 +22,15 @@ const order = ({ orders }: OrderType) => {
           Your Orders
         </h1>
         {session ? (
-          <h2>x orders</h2>
+          <h2>{orders.length} orders</h2>
         ) : (
           <h2>Please sign in to see your orders</h2>
         )}
-        <div className="mt-5 space-y-4"></div>
+        <div className="mt-5 space-y-4">
+          {orders.map((order: OrderType) => (
+            <Order order={order} />
+          ))}
+        </div>
       </main>
     </div>
   );
@@ -46,7 +43,6 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 
   //get the user's logged in credentials
   const session = await getSession(context);
-  console.log({ session });
 
   if (!session) {
     return {
@@ -77,7 +73,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
       id: order.id,
       amount: order.data().amount,
       amountShipping: order.data().amount_shipping,
-      image: order.data().images,
+      images: order.data().images,
       timestamp: moment(order.data().timestamp.toDate()).unix(),
       items: (
         await stripe.checkout.sessions.listLineItems(order.id, {
@@ -90,6 +86,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   return {
     props: {
       orders,
+      session,
     },
   };
 };
