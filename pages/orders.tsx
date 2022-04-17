@@ -27,8 +27,8 @@ const order = ({ orders }: OrderArrayType) => {
           <h2>Please sign in to see your orders</h2>
         )}
         <div className="mt-5 space-y-4">
-          {orders.map((order: OrderType) => (
-            <Order order={order} />
+          {orders.map((order: OrderType, i) => (
+            <Order order={order} key={i} />
           ))}
         </div>
       </main>
