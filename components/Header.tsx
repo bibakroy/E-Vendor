@@ -17,6 +17,20 @@ const Header = () => {
   const items = useSelector(selectItems);
   const dispatch = useDispatch();
 
+  const handleSignout = () => {
+    //clearing cart item from localstorage
+    localStorage.removeItem("Items");
+
+    signOut();
+  };
+
+  const handleSignin = () => {
+    //clearing cart item from localstorage
+    localStorage.removeItem("Items");
+
+    signIn();
+  };
+
   useEffect(() => {
     if (typeof window !== "undefined") {
       const itemsArray = JSON.parse(localStorage.getItem("Items")!);
@@ -57,7 +71,7 @@ const Header = () => {
         <div className="text-white flex items-center text-xs space-x-6 mx-6 whitespace-nowrap">
           <div
             className="link"
-            onClick={() => (!session ? signIn() : signOut())}
+            onClick={() => (!session ? handleSignin() : handleSignout())}
           >
             <p>{session ? `Hello, ${session.user?.name}` : "Sign In"}</p>
             <p className="font-extrabold md:text-sm">Account & Lists</p>
