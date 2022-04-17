@@ -5,7 +5,7 @@ const nextConfig = {
 
 module.exports = nextConfig && {
   images: {
-    domains: ["fakestoreapi.com", "www.junglescout.com"],
+    domains: ["fakestoreapi.com"],
   },
   env: {
     stripe_public_key: process.env.STRIPE_PUBLIC_KEY,

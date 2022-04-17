@@ -26,11 +26,13 @@ const Orders = ({ orders }: OrderArrayType) => {
         ) : (
           <h2>Please sign in to see your orders</h2>
         )}
-        <div className="mt-5 space-y-4">
-          {orders.map((order: OrderType, i) => (
-            <Order order={order} key={i} />
-          ))}
-        </div>
+        {orders && (
+          <div className="mt-5 space-y-4">
+            {orders.map((order: OrderType, i) => (
+              <Order order={order} key={i} />
+            ))}
+          </div>
+        )}
       </main>
     </div>
   );
@@ -56,16 +58,6 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     .collection("orders")
     .orderBy("timestamp", "desc")
     .get();
-
-  // const querySnapshot = await getDocs(collection(db, "users"));
-  // querySnapshot.forEach((doc) => {
-  //   console.log(`${doc.id} => ${doc.data()}`);
-  // });
-
-  // getDoc(session.user.email)
-  //   .collection("orders")
-  //   .orderBy("timestamp", "desc")
-  //   .get();
 
   //stripe orders
   const orders = await Promise.all(

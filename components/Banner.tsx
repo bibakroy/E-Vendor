@@ -14,28 +14,60 @@ const Banner = () => {
         interval={4000}
       >
         <div>
-          <img loading="lazy" src="/product-carousel/0.jpg" alt="" />
+          <img
+            loading="lazy"
+            src="/product-carousel/0.jpg"
+            alt="/product-carousel/0.jpg"
+          />
         </div>
         <div>
-          <img loading="lazy" src="/product-carousel/2.jpg" alt="" />
+          <img
+            loading="lazy"
+            src="/product-carousel/2.jpg"
+            alt="/product-carousel/2.jpg"
+          />
         </div>
         <div>
-          <img loading="lazy" src="/product-carousel/4.jpg" alt="" />
+          <img
+            loading="lazy"
+            src="/product-carousel/4.jpg"
+            alt="/product-carousel/4.jpg"
+          />
         </div>
         <div>
-          <img loading="lazy" src="/product-carousel/7.jpg" alt="" />
+          <img
+            loading="lazy"
+            src="/product-carousel/7.jpg"
+            alt="/product-carousel/7.jpg"
+          />
         </div>
         <div>
-          <img loading="lazy" src="/product-carousel/8.jpg" alt="" />
+          <img
+            loading="lazy"
+            src="/product-carousel/8.jpg"
+            alt="/product-carousel/8.jpg"
+          />
         </div>
         <div>
-          <img loading="lazy" src="/product-carousel/9.jpg" alt="" />
+          <img
+            loading="lazy"
+            src="/product-carousel/9.jpg"
+            alt="/product-carousel/9.jpg"
+          />
         </div>
         <div>
-          <img loading="lazy" src="/product-carousel/10.jpg" alt="" />
+          <img
+            loading="lazy"
+            src="/product-carousel/10.jpg"
+            alt="/product-carousel/10.jpg"
+          />
         </div>
         <div>
-          <img loading="lazy" src="/product-carousel/12.jpg" alt="" />
+          <img
+            loading="lazy"
+            src="/product-carousel/12.jpg"
+            alt="/product-carousel/12.jpg"
+          />
         </div>
       </Carousel>
     </div>
