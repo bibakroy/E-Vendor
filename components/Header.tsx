@@ -18,17 +18,15 @@ const Header = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    let itemsArray = [];
     if (typeof window !== "undefined") {
-      itemsArray = JSON.parse(localStorage.getItem("Items")!);
+      const itemsArray = JSON.parse(localStorage.getItem("Items")!);
 
       if (
-        (itemsArray !== null ||
-          itemsArray !== undefined ||
-          itemsArray.length !== 0) &&
+        itemsArray !== null &&
+        itemsArray !== undefined &&
+        itemsArray.length !== 0 &&
         items.length === 0
       ) {
-        console.log(itemsArray);
         itemsArray.map((item: any) => dispatch(addToCart(item)));
       }
     }
@@ -73,7 +71,6 @@ const Header = () => {
             onClick={() => router.push("/checkout")}
           >
             <span className="absolute w-4 h-4 bg-yellow-100 top-0 right-0 md:right-7 text-center rounded-full text-black font-bold">
-              {/* {itemsArray ? itemsArray.length : items.length} */}
               {items.length}
             </span>
             <ShoppingCartIcon className="h-10" />

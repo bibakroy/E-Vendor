@@ -15,12 +15,6 @@ const Checkout = () => {
   const total = useSelector(selectTotal);
   const { data: session } = useSession();
 
-  // let itemsArray = [];
-  // if (typeof window !== "undefined") {
-  //   itemsArray = JSON.parse(localStorage.getItem("Items")!);
-  // }
-  // console.log(itemsArray);
-
   const createCheckoutSession = async () => {
     const stripe = await stripePromise;
     // call the backend to create a checkout session
