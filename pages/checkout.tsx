@@ -39,12 +39,12 @@ const Checkout = () => {
       <Header />
       <main className="lg:flex max-w-screen-2xl mx-auto">
         <div className="flex-grow m-5 shadow-sm">
-          <Image
+          {/* <Image
             src="/advertisement-2.png"
             height={250}
             width={items.length === 0 ? 1500 : 1220}
             objectFit="contain"
-          />
+          /> */}
           <div className="flex flex-col p-5 space-y-10 bg-white">
             <h1 className="text-3xl border-b pb-4">
               {items.length === 0 ? "Your cart is empty" : "Shopping cart"}

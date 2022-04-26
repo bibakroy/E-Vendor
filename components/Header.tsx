@@ -60,7 +60,7 @@ const Header = () => {
           />
         </div>
 
-        <div className="bg-yellow-400 hover:bg-yellow-500 hidden md:flex items-center h-10 rounded-md flex-grow flex-shrink cursor-pointer">
+        <div className="bg-blue-400 hover:bg-blue-500 hidden md:flex items-center h-10 rounded-md flex-grow flex-shrink cursor-pointer">
           <input
             type="text"
             className="h-full p-2 flex-grow flex-shrink rounded-l-md focus:outline-none px-3"
@@ -84,7 +84,7 @@ const Header = () => {
             className="flex items-center link relative"
             onClick={() => router.push("/checkout")}
           >
-            <span className="absolute w-4 h-4 bg-yellow-100 top-0 right-0 md:right-7 text-center rounded-full text-black font-bold">
+            <span className="absolute w-4 h-4 bg-blue-100 top-0 right-0 md:right-7 text-center rounded-full text-black font-bold">
               {items.length}
             </span>
             <ShoppingCartIcon className="h-10" />

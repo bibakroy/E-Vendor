@@ -57,7 +57,7 @@ export const Product = ({
         {Array(rating)
           .fill(1)
           .map((_, i) => (
-            <StarIcon key={i} className="h-5 text-yellow-500" />
+            <StarIcon key={i} className="h-5 text-blue-500" />
           ))}
       </div>
       <p className="text-xs my-2 line-clamp-2">{description}</p>
