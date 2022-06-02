@@ -17,9 +17,10 @@ const Home = ({ products }: ProductsPropsType) => {
       <Head>
         <title>E-Market</title>
         <link rel="icon" href="/logo-for-tab.svg" />
-        <Script
-          dangerouslySetInnerHTML={{
-            __html: `(function(h,o,t,j,a,r){
+      </Head>
+      <Script
+        dangerouslySetInnerHTML={{
+          __html: `(function(h,o,t,j,a,r){
               h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
               h._hjSettings={hjid:3001529,hjsv:6};
               a=o.getElementsByTagName('head')[0];
@@ -27,9 +28,8 @@ const Home = ({ products }: ProductsPropsType) => {
               r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
               a.appendChild(r);
           })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=')`,
-          }}
-        />
-      </Head>
+        }}
+      />
       <div className="bg-gray-100">
         <Header />
         <main className="max-w-screen-2xl mx-auto">
