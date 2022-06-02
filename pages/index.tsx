@@ -19,6 +19,7 @@ const Home = ({ products }: ProductsPropsType) => {
         <link rel="icon" href="/logo-for-tab.svg" />
       </Head>
       <Script
+        id="my-script"
         dangerouslySetInnerHTML={{
           __html: `(function(h,o,t,j,a,r){
               h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
