@@ -13,7 +13,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Partytown debug={true} forward={["dataLayer.push"]} />
-      <Script
+      <script
         id="hotjar"
         type="text/partytown"
         dangerouslySetInnerHTML={{
