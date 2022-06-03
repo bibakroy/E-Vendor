@@ -12,9 +12,9 @@ import Script from "next/script";
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
-      {/* <Head>
+      <Head>
         <Partytown debug={true} forward={["dataLayer.push"]} />
-      </Head> */}
+      </Head>
       <Hotjar />
 
       <SessionProvider session={pageProps.session}>
