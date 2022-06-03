@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@builder.io/partytown": "^0.6.1",
     "@heroicons/react": "^1.0.6",
     "@reduxjs/toolkit": "^1.8.1",
     "@stripe/stripe-js": "^1.27.0",
