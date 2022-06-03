@@ -12,8 +12,10 @@ import Script from "next/script";
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
-      <Partytown debug={true} forward={["dataLayer.push"]} />
-      <script
+      <Head>
+        <Partytown debug={true} forward={["dataLayer.push"]} />
+      </Head>
+      <Script
         id="hotjar"
         type="text/partytown"
         dangerouslySetInnerHTML={{
