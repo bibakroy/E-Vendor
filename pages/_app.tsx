@@ -12,13 +12,12 @@ import Script from "next/script";
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
-      <Head>
-        <Partytown debug={true} forward={["dataLayer.push"]} />
-        <Script
-          id="hotjar"
-          type="text/partytown"
-          dangerouslySetInnerHTML={{
-            __html: `(function(h,o,t,j,a,r){
+      <Partytown debug={true} forward={["dataLayer.push"]} />
+      <Script
+        id="hotjar"
+        type="text/partytown"
+        dangerouslySetInnerHTML={{
+          __html: `(function(h,o,t,j,a,r){
             h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
             h._hjSettings={hjid:3002785,hjsv:6};
             a=o.getElementsByTagName('head')[0];
@@ -26,9 +25,9 @@ function MyApp({ Component, pageProps }: AppProps) {
             r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
             a.appendChild(r);
         })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');`,
-          }}
-        />
-      </Head>
+        }}
+      />
+
       <SessionProvider session={pageProps.session}>
         <Provider store={store}>
           <Component {...pageProps} />
